@@ -8,6 +8,10 @@ from flask_login import LoginManager
 
 #Definitions
 bootstrap = Bootstrap()
+db = SQLAlchemy()
+mail = Mail()
+login_manager = LoginManager()
+
 
 #initializing application
 def create_app(config_name):
