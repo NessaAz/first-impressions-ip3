@@ -6,13 +6,13 @@ class Config:
     '''
     Parent class
     '''
-    pass
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 
 class ProdConfig:
     '''
     Child to Config class
     '''
-    
+    pass
 
 class DevConfig:
     '''
