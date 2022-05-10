@@ -17,7 +17,7 @@
               <a href="{{url_for('main.like',id = category.id)}}"
                 ><i
                   class="fa fa-thumbs-up"
-                  style="font-size: 18px; color: blue"
+                  style="font-size: 18px; color: black"
                 ></i
               ></a>
               {{category.upvote.count()}}</span
@@ -25,7 +25,7 @@
 
             <span class="foot ms-3">
               <a href="{{url_for('main.dislike',id = category.id)}}">
-                <i class="fa fa-thumbs-down" style="color:grey"></i>
+                <i class="fa fa-thumbs-down" style="color:brown"></i>
                 {{category.downvote.count()}}</a
               ></span
             >
