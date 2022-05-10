@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-3 mb-4">
+       <div class="container">
+      <a class="navbar-brand me-2" >
+        <img
+          src="{{url_for('static', filename='images/impress.png')}}"
+          height="50"
+          width="50"
+          alt="Mgp"
+          loading="lazy"
+          style="margin-top: -1px; border-radius: 50%;"
+        />
+      </a>
+
+      <a class="navbar-brand text-primary text-bold d-block " href="{{url_for('main.index')}}">home</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarButtonsExample"
+        aria-controls="navbarButtonsExample"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+  
+        <ul class="navbar-nav ml-auto">
+        {% if current_user.is_authenticated %}
+        
+
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" style= 'margin-right:30px' data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user"></i>&nbsp;<strong>{{current_user.username}}</strong> </a>
+        <div
+         class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4" id="dropdown">
+          <a class="dropdown-item" href="{{url_for('main.profile',name=current_user.username)}}"><i class="far fa-user"></i>&nbsp; my account</a>
+          <a class="dropdown-item" href="{{url_for('auth.logout')}}"><i class="fas fa-sign-out-alt"></i>&nbsp; log out</a>
+        </div>
+        
+       
+        <a class="dropdown-item d-inline" href="{{url_for('auth.logout')}}"><i class="fas fa-sign-out-alt"></i>&nbsp; log out</a>
+        
+
+      </li>
+        {% else %}
+        <li class="nav-item">
+            <a  class="btn btn-link px-3 me-2" href="{{url_for('auth.login')}}" style= 'margin-right:30px'>log in</a>
+        </li>
+        <li class="nav-item">
+                <a style= 'margin-right:30px' class="btn btn-primary me-3" href="{{url_for('auth.signup')}}">sign up</a>
+            </li>
+
+
+            <a
+            class="btn btn-dark px-3"
+            
+            role="button"
+            ><img src="images/impress2.png" alt=""></a>
+        {%endif%}
+
+    </ul>
+    </div>
+  </nav>
+  
